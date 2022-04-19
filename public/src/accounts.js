@@ -8,10 +8,14 @@ function sortAccountsByLastName(accounts) {
 }
 
 function getTotalNumberOfBorrows(account, books) {
-  let total = 0;
-  let accId = account.id;
-  books.forEach(book => book.borrows.forEach(borrowed => { if (accId === borrowed.id) total++ }))
-  return total;
+  const id = account.id;
+  let count = 0;
+  for (let book in books) {
+    let currentBookLog = books[book].borrows;
+    let matchingLog = currentBookLog.filter((item) => item.id == id);
+    count += matchingLog.length;
+  }
+  return count;
 }
 
 

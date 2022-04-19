@@ -28,12 +28,12 @@ function _getAcctById(accounts, id) {
 
 function getBorrowersForBook(book, accounts) {
   let result = [];
-  for (let i in book.borrows) {
-    result.push(_getAcctById(accounts, book.borrows[i].id));
+  for (let item in book.borrows) {
+    result.push(_getAcctById(accounts, book.borrows[item].id));
   }
-  for (let i in result) {
-    for (let j in book.borrows) {
-      result[i]['returned'] = book.borrows[i].returned;
+  for (let item in result) {
+    for (let item2 in book.borrows) {
+      result[item2]['returned'] = book.borrows[item].returned;
     }
   }
   return result.slice(0, 10);
