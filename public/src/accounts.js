@@ -12,11 +12,7 @@ function getTotalNumberOfBorrows(account, books) {
   let count = 0;
   for (let book in books) {
     let currentBookLog = books[book].borrows;
-<<<<<<< HEAD
     let matchingLog = currentBookLog.filter((item) => item.id == id);
-=======
-    let currentBookLog = currentBookLog.filter((item) => item.id == id);
->>>>>>> 83202b28bc1bd7400d9eaef2dff1ce8c413a8305
     count += matchingLog.length;
   }
   return count;
